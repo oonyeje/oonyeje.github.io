@@ -1,14 +1,16 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-
+import { Router, Route, IndexRoute, Link, browserHistory } from 'react-router';
 import App from './components/App';
+import ContentContainerComponent from './components/ContentContainerComponent'
+
+import PageNotFound from './components/PageNotFound'
+//pages to be rendered based on navigation
 import Home from './components/Home';
-import PageNotFound from './components/PageNotFound';
 import ExampleComponent from './components/ExampleComponent';
 import ExampleTwoDeepComponent from './components/ExampleTwoDeepComponent';
-
-
+require('../assets/stylesheets/bootstrap.min.css');
+//require('../assets/stylesheets/main.scss');
 ///////////////////////////////////////////////////////////////////////////////
 // React for GitHub Pages - https://github.com/rafrex/react-github-pages
 // ----------------------------------------------------------------------------
@@ -71,10 +73,10 @@ function parseRedirectQuery(query, replace) {
 // a redirect to the domain with no path is required.
 // https://help.github.com/articles/custom-domain-redirects-for-github-pages-sites/
 // SET THIS: e.g. my-repo-name
-const gitHubRepoName = 'react-github-pages';
+const gitHubRepoName = 'oonyeje.github.io';
 // The domain for your site
 // SET THIS: e.g. http://subdomain.example.tld, or http://www.example.tld
-const domain = 'http://react-github-pages.rafrex.com';
+const domain = 'http://oonyeje.github.io';
 function redirectToDomain() {
   window.location.replace(domain);
 }
@@ -84,11 +86,21 @@ function redirectToDomain() {
 const routes = (
   // onEnter hook checks if a redirect is needed before App component is loaded
   <Route path="/" mapMenuTitle="Home" component={App} onEnter={checkForRedirect}>
-    <IndexRoute component={Home} />
+    <IndexRoute component={ContentContainerComponent} />
 
-    <Route path="example" mapMenuTitle="Example" component={ExampleComponent}>
-      <Route path="two-deep" mapMenuTitle="Two Deep" component={ExampleTwoDeepComponent} />
-    </Route>
+    {/*
+      <Route path="example" mapMenuTitle="Example" component={ContentContainerComponent}>
+        <Route path="two-deep" mapMenuTitle="Two Deep" component={ContentContainerComponent} />
+      </Route>
+    */}
+
+    <Route path="web-development" mapMenuTitle="Web" component={ContentContainerComponent}/>
+    <Route path="mobile-development" mapMenuTitle="Mobile" component={ContentContainerComponent}/>
+    <Route path="audio-software-development" mapMenuTitle="Audio Development" component={ContentContainerComponent}/>
+    <Route path="audio-production" mapMenuTitle="Audio Production" component={ContentContainerComponent}/>
+    <Route path="podcasting" mapMenuTitle="Podcasting" component={ContentContainerComponent}/>
+    <Route path="hacks" mapMenuTitle="Hardware & Software Hacks" component={ContentContainerComponent}/>
+    <Route path="contact" mapMenuTitle="Contact Me" component={ContentContainerComponent}/>
 
     <Route path="*" mapMenuTitle="Page Not Found" component={PageNotFound} />
   </Route>

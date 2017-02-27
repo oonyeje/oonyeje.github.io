@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  entry: './index.js',
+  entry: './src/index.js',
   output: {
     path: __dirname + '/__build__',
     filename: 'bundle.js',
@@ -16,7 +16,10 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
-      }
+      },
+      {test: /\.css$/, loader: 'style-loader!css-loader'},
+      {test: /\.(jpe?g|png|gif|svg)$/i, loader: "file-loader?name=/assets/images/[name].[ext]"}
+
     ]
   },
   resolve: {

@@ -4,9 +4,9 @@ import { Link } from 'react-router';
 function Home() {
   return (
     <div>
-      <h1>
-        hi there
-      </h1>
+      <p>
+        hi
+      </p>
     </div>
   );
   // return (
