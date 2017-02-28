@@ -35,7 +35,10 @@ export default class App extends React.Component {
 
   render (){
     return(
-      <div>
+      <div style={
+          {height: '100%',
+            width: '100%'
+        }}>
         {/*
           //example of traditional redirects with react router
           which generates history
