@@ -93,13 +93,13 @@ export default class NavigationComponent extends React.Component {
                                               <MenuItem eventKey={3.3}><li onClick={() => this.onClickHandler(this.props.currentRoute)} ><Link to={'/hacks'}>Hardware & Software Hacks</Link></li></MenuItem>
                                             </ NavDropdown>
                                             <NavItem eventKey="4" title="Contact Me">
-                                                <Link to={'/contact'}>
+                                                {/*<Link to={'/contact'}>*/}
                                                     <Button
                                                       bsStyle="default"
                                                       bsSize="extra-small"
                                                       onClick={this.open}
                                                      >Contact</Button>
-                                                </Link>
+                                                   {/*</Link>*/}
                                             </NavItem>
                                         </Nav>
                                     </Col>

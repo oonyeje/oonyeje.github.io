@@ -172,7 +172,6 @@
 	  _react2.default.createElement(_reactRouter.Route, { path: 'audio-production', mapMenuTitle: 'Audio Production', component: _ContentContainerComponent2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'podcasting', mapMenuTitle: 'Podcasting', component: _ContentContainerComponent2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'hacks', mapMenuTitle: 'Hardware & Software Hacks', component: _ContentContainerComponent2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'contact', mapMenuTitle: 'Contact Me', component: _ContentContainerComponent2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: '*', mapMenuTitle: 'Page Not Found', component: _PageNotFound2.default })
 	);
 
@@ -25842,7 +25841,7 @@
 
 	var backgroundImageStyle = {
 	    width: "100%",
-	    height: "400px",
+	    height: "100%",
 	    backgroundImage: 'url(' + _portfolioBackground2.default + ')'
 	};
 
@@ -25862,7 +25861,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
+	                { style: backgroundImageStyle },
 	                this.props.children
 	            );
 	        }
@@ -26233,17 +26232,13 @@
 	                                                _NavItem2.default,
 	                                                { eventKey: '4', title: 'Contact Me' },
 	                                                _react2.default.createElement(
-	                                                    _reactRouter.Link,
-	                                                    { to: '/contact' },
-	                                                    _react2.default.createElement(
-	                                                        _Button2.default,
-	                                                        {
-	                                                            bsStyle: 'default',
-	                                                            bsSize: 'extra-small',
-	                                                            onClick: this.open
-	                                                        },
-	                                                        'Contact'
-	                                                    )
+	                                                    _Button2.default,
+	                                                    {
+	                                                        bsStyle: 'default',
+	                                                        bsSize: 'extra-small',
+	                                                        onClick: this.open
+	                                                    },
+	                                                    'Contact'
 	                                                )
 	                                            )
 	                                        )
@@ -38110,17 +38105,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _Home = __webpack_require__(430);
+	var _InvisionLoaderComponent = __webpack_require__(436);
 
-	var _Home2 = _interopRequireDefault(_Home);
-
-	var _ExampleComponent = __webpack_require__(431);
-
-	var _ExampleComponent2 = _interopRequireDefault(_ExampleComponent);
-
-	var _ExampleTwoDeepComponent = __webpack_require__(432);
-
-	var _ExampleTwoDeepComponent2 = _interopRequireDefault(_ExampleTwoDeepComponent);
+	var _InvisionLoaderComponent2 = _interopRequireDefault(_InvisionLoaderComponent);
 
 	var _contentContainer = __webpack_require__(433);
 
@@ -38152,6 +38139,8 @@
 	    //console.log(currentRouteName);
 	    value: function renderOnPath(path) {
 	      var aquaInvisionURL = 'https://projects.invisionapp.com/share/QV9OA25MA#/screens';
+	      var vendooInvisionURL = 'http://kroleo.com/invision/Vendoo/#/screens';
+	      var getHipInvisionURL = 'http://kroleo.com/invision/GetHip/#/screens';
 
 	      switch (path) {
 	        case '/personal':
@@ -38167,23 +38156,11 @@
 	            path
 	          );
 	        case '/web-development':
-	          return _react2.default.createElement(
-	            'div',
-	            null,
-	            path
-	          );
+	          return _react2.default.createElement(_InvisionLoaderComponent2.default, { invisionURL: aquaInvisionURL, style: _contentContainer2.default });
 	        case '/mobile-development':
-	          return _react2.default.createElement(
-	            'div',
-	            null,
-	            path
-	          );
+	          return _react2.default.createElement(_InvisionLoaderComponent2.default, { invisionURL: vendooInvisionURL, style: _contentContainer2.default });
 	        case '/audio-software-development':
-	          return _react2.default.createElement(
-	            'div',
-	            null,
-	            path
-	          );
+	          return _react2.default.createElement(_InvisionLoaderComponent2.default, { invisionURL: getHipInvisionURL, style: _contentContainer2.default });
 	        case '/audio-production':
 	          return _react2.default.createElement(
 	            'div',
@@ -38222,15 +38199,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'div',
-	          { className: _contentContainer2.default.content_container },
-	          _react2.default.createElement(
-	            'div',
-	            { className: _contentContainer2.default.content_component },
-	            this.renderOnPath(this.props.currentRoute)
-	          )
-	        )
+	        this.renderOnPath(this.props.currentRoute)
 	      );
 	    }
 	  }]);
@@ -38521,6 +38490,71 @@
 	}
 
 	exports.default = PageNotFound;
+
+/***/ },
+/* 436 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var InvisionLoaderComponent = function (_React$Component) {
+	    _inherits(InvisionLoaderComponent, _React$Component);
+
+	    function InvisionLoaderComponent() {
+	        _classCallCheck(this, InvisionLoaderComponent);
+
+	        var _this = _possibleConstructorReturn(this, (InvisionLoaderComponent.__proto__ || Object.getPrototypeOf(InvisionLoaderComponent)).call(this));
+
+	        _this.iframe = _this.iframe.bind(_this);
+	        return _this;
+	    }
+
+	    _createClass(InvisionLoaderComponent, [{
+	        key: 'iframe',
+	        value: function iframe() {
+	            return {
+	                __html: '<iframe src=' + '"' + this.props.invisionURL + '" width="100%" height="100%" frameborder= "0"></iframe>'
+	            };
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: this.props.style.content_container },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: this.props.style.content_component },
+	                    _react2.default.createElement('div', { style: { height: '100%',
+	                            width: '100%'
+	                        }, dangerouslySetInnerHTML: this.iframe() })
+	                )
+	            );
+	        }
+	    }]);
+
+	    return InvisionLoaderComponent;
+	}(_react2.default.Component);
+
+	exports.default = InvisionLoaderComponent;
 
 /***/ }
 /******/ ]);
