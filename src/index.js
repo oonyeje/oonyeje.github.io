@@ -100,7 +100,7 @@ const routes = (
     <Route path="audio-production" mapMenuTitle="Audio Production" component={ContentContainerComponent}/>
     <Route path="podcasting" mapMenuTitle="Podcasting" component={ContentContainerComponent}/>
     <Route path="hacks" mapMenuTitle="Hardware & Software Hacks" component={ContentContainerComponent}/>
-    <Route path="contact" mapMenuTitle="Contact Me" component={ContentContainerComponent}/>
+    {/*<Route path="contact" mapMenuTitle="Contact Me" component={ContentContainerComponent}/>*/}
 
     <Route path="*" mapMenuTitle="Page Not Found" component={PageNotFound} />
   </Route>

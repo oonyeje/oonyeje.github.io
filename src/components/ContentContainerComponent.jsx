@@ -1,8 +1,6 @@
 import React from 'react';
 //pages to be rendered based on navigation
-import Home from './Home';
-import ExampleComponent from './ExampleComponent';
-import ExampleTwoDeepComponent from './ExampleTwoDeepComponent';
+import InvisionLoaderComponent from './InvisionLoaderComponent'
 
 import styles from './../../assets/stylesheets/content-container.css';
 
@@ -12,6 +10,8 @@ export default class ContentContainerComponent extends React.Component {
   //console.log(currentRouteName);
   renderOnPath(path) {
     var aquaInvisionURL = 'https://projects.invisionapp.com/share/QV9OA25MA#/screens';
+    var vendooInvisionURL = 'http://kroleo.com/invision/Vendoo/#/screens';
+    var getHipInvisionURL = 'http://kroleo.com/invision/GetHip/#/screens';
 
     switch(path){
         case '/personal':
@@ -28,21 +28,15 @@ export default class ContentContainerComponent extends React.Component {
           );
         case '/web-development':
           return (
-            <div>
-              {path}
-            </div>
+            <InvisionLoaderComponent invisionURL={aquaInvisionURL} style={styles}/>
           );
         case '/mobile-development':
           return (
-            <div>
-              {path}
-            </div>
+            <InvisionLoaderComponent invisionURL={vendooInvisionURL} style={styles}/>
           );
         case '/audio-software-development':
           return (
-            <div>
-              {path}
-            </div>
+            <InvisionLoaderComponent invisionURL={getHipInvisionURL} style={styles}/>
           );
         case '/audio-production':
           return (
@@ -80,11 +74,7 @@ export default class ContentContainerComponent extends React.Component {
   render () {
     return (
       <div>
-        <div className={styles.content_container} >
-          <div className={styles.content_component}>
-            {this.renderOnPath(this.props.currentRoute)}
-          </div>
-        </div>
+        {this.renderOnPath(this.props.currentRoute)}
       </div>
     );
   }
