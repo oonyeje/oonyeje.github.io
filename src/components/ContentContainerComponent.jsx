@@ -28,15 +28,35 @@ export default class ContentContainerComponent extends React.Component {
           );
         case '/web-development':
           return (
-            <InvisionLoaderComponent invisionURL={aquaInvisionURL} style={styles}/>
+            <InvisionLoaderComponent invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
+          );
+        case '/web-development/aqua':
+          return (
+            <InvisionLoaderComponent invisionURL={aquaInvisionURL} style={styles} currentRoute={this.props.currentRoute}/>
+          );
+        case '/web-development/pearlception':
+          return (
+            <InvisionLoaderComponent invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
           );
         case '/mobile-development':
           return (
-            <InvisionLoaderComponent invisionURL={vendooInvisionURL} style={styles}/>
+            <InvisionLoaderComponent invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
+          );
+        case '/mobile-development/vendoo':
+          return (
+            <InvisionLoaderComponent invisionURL={vendooInvisionURL} style={styles} currentRoute={this.props.currentRoute}/>
+          );
+        case '/mobile-development/gethip':
+          return (
+            <InvisionLoaderComponent invisionURL={getHipInvisionURL} style={styles} currentRoute={this.props.currentRoute}/>
           );
         case '/audio-software-development':
           return (
-            <InvisionLoaderComponent invisionURL={getHipInvisionURL} style={styles}/>
+            <InvisionLoaderComponent invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
+          );
+        case '/audio-software-development/wav-blocks-studio':
+          return (
+            <InvisionLoaderComponent invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
           );
         case '/audio-production':
           return (

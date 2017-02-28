@@ -94,9 +94,17 @@ const routes = (
       </Route>
     */}
 
-    <Route path="web-development" mapMenuTitle="Web" component={ContentContainerComponent}/>
-    <Route path="mobile-development" mapMenuTitle="Mobile" component={ContentContainerComponent}/>
-    <Route path="audio-software-development" mapMenuTitle="Audio Development" component={ContentContainerComponent}/>
+    <Route path="web-development" mapMenuTitle="Web" component={ContentContainerComponent}>
+      <Route path="aqua" mapMenuTitle="Aqua Hotel Management" component={ContentContainerComponent}/>
+      <Route path="pearlception" mapMenuTitle="Pearlception Dashboard" component={ContentContainerComponent}/>
+    </Route>
+    <Route path="mobile-development" mapMenuTitle="Mobile" component={ContentContainerComponent}>
+      <Route path="vendoo" mapMenuTitle="Vendoo" component={ContentContainerComponent}/>
+      <Route path="gethip" mapMenuTitle="GetHip" component={ContentContainerComponent}/>
+    </Route>
+    <Route path="audio-software-development" mapMenuTitle="Audio Development" component={ContentContainerComponent}>
+      <Route path="wav-blocks-studio" mapMenuTitle="WavBlocks Studio" component={ContentContainerComponent}/>
+    </Route>
     <Route path="audio-production" mapMenuTitle="Audio Production" component={ContentContainerComponent}/>
     <Route path="podcasting" mapMenuTitle="Podcasting" component={ContentContainerComponent}/>
     <Route path="hacks" mapMenuTitle="Hardware & Software Hacks" component={ContentContainerComponent}/>
