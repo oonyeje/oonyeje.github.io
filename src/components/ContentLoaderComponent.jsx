@@ -4,6 +4,14 @@ import ButtonToolbar from 'react-bootstrap/lib/ButtonToolbar';
 import MenuItem from  'react-bootstrap/lib/MenuItem';
 import Col from 'react-bootstrap/lib/Col'
 import PDFViewerComponent from './PDFViewerComponent';
+import ComingSoonComponent from './ComingSoonComponent';
+
+//import logo images
+import personalLogo from '../../assets/images/Okechi_Onyeje_original.png';
+import musicProducerLogo from '../../assets/images/Okechi_Onyeje_music_producer.png';
+import hobbyistLogo from '../../assets/images/Okechi_Onyeje_hobbyist_hacker.png';
+import professionalLogo from '../../assets/images/Okechi_Onyeje_professional.png';
+import softwareEngineerLogo from '../../assets/images/Okechi_Onyeje_professional_software_engineer.png';
 
 import {Link} from 'react-router';
 
@@ -16,9 +24,41 @@ export default class ContentLoaderComponent extends React.Component {
         this.renderBarButtons = this.renderBarButtons.bind(this);
         this.onContentSelect = this.onContentSelect.bind(this);
         this.renderViewPort = this.renderViewPort.bind(this);
+        this.renderLogo = this.renderLogo.bind(this);
         this.state ={
             _content: 'none'
         }
+    }
+
+    renderLogo() {
+        var logoStyle = {
+            width: "200",
+            height: "200"
+        }
+
+        if (_.includes(this.props.currentRoute, '/web-development')
+            || _.includes(this.props.currentRoute, '/mobile-development')
+            ) {
+
+                logoStyle.backgroundImage = softwareEngineerLogo
+        }else if (_.includes(this.props.currentRoute, '/professional')) {
+
+                logoStyle.backgroundImage = professionalLogo
+        }else if (_.includes(this.props.currentRoute, '/audio-production')
+            || _.includes(this.props.currentRoute, '/podcasting')
+            ) {
+
+                logoStyle.backgroundImage = musicProducerLogo
+        }else if (_.includes(this.props.currentRoute, '/audio-software-development')
+            || _.includes(this.props.currentRoute, '/hacks')
+            ) {
+
+                logoStyle.backgroundImage = hobbyistLogo
+        }else {
+
+                logoStyle.backgroundImage = personalLogo
+        }
+        return logoStyle.backgroundImage
     }
 
     onContentSelect (content) {
@@ -34,6 +74,13 @@ export default class ContentLoaderComponent extends React.Component {
                         }} dangerouslySetInnerHTML={ this.iframe() } />
                     );
                
+            }
+            else if (viewPortType == 'coming-soon'){
+                return(
+                    <div style={{height: '100%', width: '100%'}}>
+                       <ComingSoonComponent logoPath={this.renderLogo()} />
+                    </div>
+                );
             }
             else{
                  return (

@@ -58,23 +58,23 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _ContentContainerComponent = __webpack_require__(429);
+	var _ContentContainerComponent = __webpack_require__(434);
 
 	var _ContentContainerComponent2 = _interopRequireDefault(_ContentContainerComponent);
 
-	var _PageNotFound = __webpack_require__(466);
+	var _PageNotFound = __webpack_require__(472);
 
 	var _PageNotFound2 = _interopRequireDefault(_PageNotFound);
 
-	var _Home = __webpack_require__(467);
+	var _Home = __webpack_require__(473);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _ExampleComponent = __webpack_require__(468);
+	var _ExampleComponent = __webpack_require__(474);
 
 	var _ExampleComponent2 = _interopRequireDefault(_ExampleComponent);
 
-	var _ExampleTwoDeepComponent = __webpack_require__(469);
+	var _ExampleTwoDeepComponent = __webpack_require__(475);
 
 	var _ExampleTwoDeepComponent2 = _interopRequireDefault(_ExampleTwoDeepComponent);
 
@@ -25914,7 +25914,7 @@
 
 	var _NavigationComponent2 = _interopRequireDefault(_NavigationComponent);
 
-	var _ContentContainerComponent = __webpack_require__(429);
+	var _ContentContainerComponent = __webpack_require__(434);
 
 	var _ContentContainerComponent2 = _interopRequireDefault(_ContentContainerComponent);
 
@@ -26034,6 +26034,26 @@
 
 	var _Modal2 = _interopRequireDefault(_Modal);
 
+	var _Okechi_Onyeje_original = __webpack_require__(429);
+
+	var _Okechi_Onyeje_original2 = _interopRequireDefault(_Okechi_Onyeje_original);
+
+	var _Okechi_Onyeje_music_producer = __webpack_require__(430);
+
+	var _Okechi_Onyeje_music_producer2 = _interopRequireDefault(_Okechi_Onyeje_music_producer);
+
+	var _Okechi_Onyeje_hobbyist_hacker = __webpack_require__(431);
+
+	var _Okechi_Onyeje_hobbyist_hacker2 = _interopRequireDefault(_Okechi_Onyeje_hobbyist_hacker);
+
+	var _Okechi_Onyeje_professional = __webpack_require__(432);
+
+	var _Okechi_Onyeje_professional2 = _interopRequireDefault(_Okechi_Onyeje_professional);
+
+	var _Okechi_Onyeje_professional_software_engineer = __webpack_require__(433);
+
+	var _Okechi_Onyeje_professional_software_engineer2 = _interopRequireDefault(_Okechi_Onyeje_professional_software_engineer);
+
 	var _reactRouter = __webpack_require__(171);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -26045,6 +26065,9 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	//import bootsrap components
+
+
+	//import logo images
 
 
 	var NavigationComponent = function (_React$Component) {
@@ -26062,10 +26085,46 @@
 	        _this.onClickHandler = _this.onClickHandler.bind(_this);
 	        _this.close = _this.close.bind(_this);
 	        _this.open = _this.open.bind(_this);
+	        _this.renderLogo = _this.renderLogo.bind(_this);
 	        return _this;
 	    }
 
 	    _createClass(NavigationComponent, [{
+	        key: 'renderLogo',
+	        value: function renderLogo() {
+	            var logoStyle = {
+	                width: "100",
+	                height: "100"
+	            };
+
+	            if (_.includes(this.props.currentRoute, '/web-development') || _.includes(this.props.currentRoute, '/mobile-development')) {
+
+	                logoStyle.backgroundImage = _Okechi_Onyeje_professional_software_engineer2.default;
+	            } else if (_.includes(this.props.currentRoute, '/professional')) {
+
+	                logoStyle.backgroundImage = _Okechi_Onyeje_professional2.default;
+	            } else if (_.includes(this.props.currentRoute, '/audio-production') || _.includes(this.props.currentRoute, '/podcasting')) {
+
+	                logoStyle.backgroundImage = _Okechi_Onyeje_music_producer2.default;
+	            } else if (_.includes(this.props.currentRoute, '/audio-software-development') || _.includes(this.props.currentRoute, '/hacks')) {
+
+	                logoStyle.backgroundImage = _Okechi_Onyeje_hobbyist_hacker2.default;
+	            } else {
+
+	                logoStyle.backgroundImage = _Okechi_Onyeje_original2.default;
+	            }
+
+	            return _react2.default.createElement(
+	                'div',
+	                { style: { width: "100%", height: "100%" } },
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/', style: { width: logoStyle.width, height: logoStyle.height } },
+	                    _react2.default.createElement('img', { src: logoStyle.backgroundImage, style: { width: logoStyle.width, height: logoStyle.height } })
+	                )
+	            );
+	        }
+	    }, {
 	        key: 'close',
 	        value: function close() {
 	            this.setState({ showContactModal: false });
@@ -26118,165 +26177,174 @@
 	                    'div',
 	                    null,
 	                    _react2.default.createElement(
-	                        'header',
-	                        null,
+	                        _Navbar2.default,
+	                        { bsStyle: 'inverse', staticTop: 'true', style: { background: "transparent" }, collapseOnSelect: true },
 	                        _react2.default.createElement(
-	                            _Navbar2.default,
-	                            { bsStyle: 'inverse', staticTop: 'true', collapseOnSelect: true },
+	                            _Navbar2.default.Header,
+	                            null,
 	                            _react2.default.createElement(
-	                                _Navbar2.default.Header,
+	                                _Navbar2.default.Brand,
 	                                null,
-	                                _react2.default.createElement(_Navbar2.default.Toggle, null)
+	                                this.renderLogo()
 	                            ),
+	                            _react2.default.createElement(_Navbar2.default.Toggle, null)
+	                        ),
+	                        _react2.default.createElement(
+	                            _Navbar2.default.Collapse,
+	                            null,
 	                            _react2.default.createElement(
-	                                _Navbar2.default.Collapse,
+	                                _Row2.default,
 	                                null,
 	                                _react2.default.createElement(
-	                                    _Row2.default,
-	                                    null,
+	                                    _Col2.default,
+	                                    { xs: 6, xsOffset: 3 },
 	                                    _react2.default.createElement(
-	                                        _Col2.default,
-	                                        { xs: 6, xsOffset: 4 },
+	                                        _Nav2.default,
+	                                        { bsStyle: 'pills' },
 	                                        _react2.default.createElement(
-	                                            _Nav2.default,
-	                                            { bsStyle: 'pills' },
+	                                            _NavDropdown2.default,
+	                                            { eventKey: 1, title: 'About', id: 'basic-nav-dropdown', style: { textColor: "white" } },
 	                                            _react2.default.createElement(
-	                                                _NavDropdown2.default,
-	                                                { eventKey: 1, title: 'About', id: 'basic-nav-dropdown' },
+	                                                _MenuItem2.default,
+	                                                { eventKey: 1.1 },
 	                                                _react2.default.createElement(
-	                                                    _MenuItem2.default,
-	                                                    { eventKey: 1.1 },
-	                                                    _react2.default.createElement(
-	                                                        'li',
-	                                                        { onClick: function onClick() {
-	                                                                return _this2.onClickHandler(_this2.props.currentRoute);
-	                                                            } },
-	                                                        _react2.default.createElement(
-	                                                            _reactRouter.Link,
-	                                                            { to: '/personal' },
-	                                                            'Personal'
-	                                                        )
-	                                                    )
-	                                                ),
-	                                                _react2.default.createElement(
-	                                                    _MenuItem2.default,
-	                                                    { eventKey: 1.2 },
-	                                                    _react2.default.createElement(
-	                                                        'li',
-	                                                        { onClick: function onClick() {
-	                                                                return _this2.onClickHandler(_this2.props.currentRoute);
-	                                                            } },
-	                                                        _react2.default.createElement(
-	                                                            _reactRouter.Link,
-	                                                            { to: '/professional' },
-	                                                            'Professional'
-	                                                        )
-	                                                    )
-	                                                )
-	                                            ),
-	                                            _react2.default.createElement(
-	                                                _NavDropdown2.default,
-	                                                { eventKey: 2, title: 'Projects', id: 'basic-nav-dropdown' },
-	                                                _react2.default.createElement(
-	                                                    _MenuItem2.default,
-	                                                    { eventKey: 2.1 },
-	                                                    _react2.default.createElement(
-	                                                        'li',
-	                                                        { onClick: function onClick() {
-	                                                                return _this2.onClickHandler(_this2.props.currentRoute);
-	                                                            } },
-	                                                        _react2.default.createElement(
-	                                                            _reactRouter.Link,
-	                                                            { to: '/web-development' },
-	                                                            'Web'
-	                                                        )
-	                                                    )
-	                                                ),
-	                                                _react2.default.createElement(
-	                                                    _MenuItem2.default,
-	                                                    { eventKey: 2.2 },
-	                                                    _react2.default.createElement(
-	                                                        'li',
-	                                                        { onClick: function onClick() {
-	                                                                return _this2.onClickHandler(_this2.props.currentRoute);
-	                                                            } },
-	                                                        _react2.default.createElement(
-	                                                            _reactRouter.Link,
-	                                                            { to: '/mobile-development' },
-	                                                            'Mobile'
-	                                                        )
-	                                                    )
-	                                                ),
-	                                                _react2.default.createElement(
-	                                                    _MenuItem2.default,
-	                                                    { eventKey: 2.3 },
-	                                                    _react2.default.createElement(
-	                                                        'li',
-	                                                        { onClick: function onClick() {
-	                                                                return _this2.onClickHandler(_this2.props.currentRoute);
-	                                                            } },
-	                                                        _react2.default.createElement(
-	                                                            _reactRouter.Link,
-	                                                            { to: '/audio-software-development' },
-	                                                            'Audio'
-	                                                        )
-	                                                    )
-	                                                )
-	                                            ),
-	                                            _react2.default.createElement(
-	                                                _NavDropdown2.default,
-	                                                { eventKey: 3, title: 'Hobbies', id: 'basic-nav-dropdown' },
-	                                                _react2.default.createElement(
-	                                                    _MenuItem2.default,
-	                                                    { eventKey: 3.1 },
+	                                                    'li',
+	                                                    { onClick: function onClick() {
+	                                                            return _this2.onClickHandler(_this2.props.currentRoute);
+	                                                        } },
 	                                                    _react2.default.createElement(
 	                                                        _reactRouter.Link,
-	                                                        { to: '/audio-production' },
-	                                                        'Audio Production'
-	                                                    )
-	                                                ),
-	                                                _react2.default.createElement(
-	                                                    _MenuItem2.default,
-	                                                    { eventKey: 3.2 },
-	                                                    _react2.default.createElement(
-	                                                        'li',
-	                                                        { onClick: function onClick() {
-	                                                                return _this2.onClickHandler(_this2.props.currentRoute);
-	                                                            } },
-	                                                        _react2.default.createElement(
-	                                                            _reactRouter.Link,
-	                                                            { to: '/podcasting' },
-	                                                            'Podcasts'
-	                                                        )
-	                                                    )
-	                                                ),
-	                                                _react2.default.createElement(
-	                                                    _MenuItem2.default,
-	                                                    { eventKey: 3.3 },
-	                                                    _react2.default.createElement(
-	                                                        'li',
-	                                                        { onClick: function onClick() {
-	                                                                return _this2.onClickHandler(_this2.props.currentRoute);
-	                                                            } },
-	                                                        _react2.default.createElement(
-	                                                            _reactRouter.Link,
-	                                                            { to: '/hacks' },
-	                                                            'Hardware & Software Hacks'
-	                                                        )
+	                                                        { to: '/personal' },
+	                                                        'Personal'
 	                                                    )
 	                                                )
 	                                            ),
 	                                            _react2.default.createElement(
-	                                                _NavItem2.default,
-	                                                { eventKey: '4', title: 'Contact Me' },
+	                                                _MenuItem2.default,
+	                                                { eventKey: 1.2 },
 	                                                _react2.default.createElement(
-	                                                    _Button2.default,
-	                                                    {
-	                                                        bsStyle: 'default',
-	                                                        bsSize: 'extra-small',
-	                                                        onClick: this.open
-	                                                    },
-	                                                    'Contact'
+	                                                    'li',
+	                                                    { onClick: function onClick() {
+	                                                            return _this2.onClickHandler(_this2.props.currentRoute);
+	                                                        } },
+	                                                    _react2.default.createElement(
+	                                                        _reactRouter.Link,
+	                                                        { to: '/professional' },
+	                                                        'Professional'
+	                                                    )
+	                                                )
+	                                            )
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            _NavDropdown2.default,
+	                                            { eventKey: 2, title: 'Projects', id: 'basic-nav-dropdown' },
+	                                            _react2.default.createElement(
+	                                                _MenuItem2.default,
+	                                                { eventKey: 2.1 },
+	                                                _react2.default.createElement(
+	                                                    'li',
+	                                                    { onClick: function onClick() {
+	                                                            return _this2.onClickHandler(_this2.props.currentRoute);
+	                                                        } },
+	                                                    _react2.default.createElement(
+	                                                        _reactRouter.Link,
+	                                                        { to: '/web-development' },
+	                                                        'Web'
+	                                                    )
+	                                                )
+	                                            ),
+	                                            _react2.default.createElement(
+	                                                _MenuItem2.default,
+	                                                { eventKey: 2.2 },
+	                                                _react2.default.createElement(
+	                                                    'li',
+	                                                    { onClick: function onClick() {
+	                                                            return _this2.onClickHandler(_this2.props.currentRoute);
+	                                                        } },
+	                                                    _react2.default.createElement(
+	                                                        _reactRouter.Link,
+	                                                        { to: '/mobile-development' },
+	                                                        'Mobile'
+	                                                    )
+	                                                )
+	                                            ),
+	                                            _react2.default.createElement(
+	                                                _MenuItem2.default,
+	                                                { eventKey: 2.3 },
+	                                                _react2.default.createElement(
+	                                                    'li',
+	                                                    { onClick: function onClick() {
+	                                                            return _this2.onClickHandler(_this2.props.currentRoute);
+	                                                        } },
+	                                                    _react2.default.createElement(
+	                                                        _reactRouter.Link,
+	                                                        { to: '/audio-software-development' },
+	                                                        'Audio'
+	                                                    )
+	                                                )
+	                                            )
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            _NavDropdown2.default,
+	                                            { eventKey: 3, title: 'Hobbies', id: 'basic-nav-dropdown' },
+	                                            _react2.default.createElement(
+	                                                _MenuItem2.default,
+	                                                { eventKey: 3.1 },
+	                                                _react2.default.createElement(
+	                                                    _reactRouter.Link,
+	                                                    { to: '/audio-production' },
+	                                                    'Audio Production'
+	                                                )
+	                                            ),
+	                                            _react2.default.createElement(
+	                                                _MenuItem2.default,
+	                                                { eventKey: 3.2 },
+	                                                _react2.default.createElement(
+	                                                    'li',
+	                                                    { onClick: function onClick() {
+	                                                            return _this2.onClickHandler(_this2.props.currentRoute);
+	                                                        } },
+	                                                    _react2.default.createElement(
+	                                                        _reactRouter.Link,
+	                                                        { to: '/podcasting' },
+	                                                        'Podcasts'
+	                                                    )
+	                                                )
+	                                            ),
+	                                            _react2.default.createElement(
+	                                                _MenuItem2.default,
+	                                                { eventKey: 3.3 },
+	                                                _react2.default.createElement(
+	                                                    'li',
+	                                                    { onClick: function onClick() {
+	                                                            return _this2.onClickHandler(_this2.props.currentRoute);
+	                                                        } },
+	                                                    _react2.default.createElement(
+	                                                        _reactRouter.Link,
+	                                                        { to: '/hacks' },
+	                                                        'Hardware & Software Hacks'
+	                                                    )
+	                                                )
+	                                            )
+	                                        ),
+	                                        _react2.default.createElement(
+	                                            _Row2.default,
+	                                            null,
+	                                            _react2.default.createElement(
+	                                                _Col2.default,
+	                                                { xs: 6, xsOffset: 4 },
+	                                                _react2.default.createElement(
+	                                                    _NavItem2.default,
+	                                                    { eventKey: '4', title: 'Contact Me' },
+	                                                    _react2.default.createElement(
+	                                                        _Button2.default,
+	                                                        {
+	                                                            bsStyle: 'default',
+	                                                            bsSize: 'extra-small',
+	                                                            onClick: this.open
+	                                                        },
+	                                                        'Contact'
+	                                                    )
 	                                                )
 	                                            )
 	                                        )
@@ -38131,6 +38199,36 @@
 /* 429 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = __webpack_require__.p + "/assets/images/Okechi_Onyeje_original.png";
+
+/***/ },
+/* 430 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/assets/images/Okechi_Onyeje_music_producer.png";
+
+/***/ },
+/* 431 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/assets/images/Okechi_Onyeje_hobbyist_hacker.png";
+
+/***/ },
+/* 432 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/assets/images/Okechi_Onyeje_professional.png";
+
+/***/ },
+/* 433 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "/assets/images/Okechi_Onyeje_professional_software_engineer.png";
+
+/***/ },
+/* 434 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
@@ -38143,11 +38241,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ContentLoaderComponent = __webpack_require__(430);
+	var _ContentLoaderComponent = __webpack_require__(435);
 
 	var _ContentLoaderComponent2 = _interopRequireDefault(_ContentLoaderComponent);
 
-	var _contentContainer = __webpack_require__(464);
+	var _contentContainer = __webpack_require__(470);
 
 	var _contentContainer2 = _interopRequireDefault(_contentContainer);
 
@@ -38185,20 +38283,16 @@
 	          return _react2.default.createElement(
 	            'div',
 	            null,
-	            path
+	            _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute })
 	          );
 	        case '/professional':
-	          return _react2.default.createElement(
-	            'div',
-	            null,
-	            path
-	          );
+	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/web-development':
 	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'invision', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/web-development/aqua':
 	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'invision', invisionURL: aquaInvisionURL, style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/web-development/pearlception':
-	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'invision', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
+	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/mobile-development':
 	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'invision', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/mobile-development/vendoo':
@@ -38208,30 +38302,24 @@
 	        case '/audio-software-development':
 	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'invision', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/audio-software-development/wav-blocks-studio':
-	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'pdf', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
+	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/audio-production':
 	          return _react2.default.createElement(
 	            'div',
 	            null,
-	            path
+	            _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute })
 	          );
 	        case '/podcasting':
 	          return _react2.default.createElement(
 	            'div',
 	            null,
-	            path
+	            _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute })
 	          );
 	        case '/hacks':
 	          return _react2.default.createElement(
 	            'div',
 	            null,
-	            path
-	          );
-	        case '/contacts':
-	          return _react2.default.createElement(
-	            'div',
-	            null,
-	            path
+	            _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute })
 	          );
 	        default:
 	          return _react2.default.createElement(
@@ -38258,7 +38346,7 @@
 	exports.default = ContentContainerComponent;
 
 /***/ },
-/* 430 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38273,11 +38361,11 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _DropdownButton = __webpack_require__(431);
+	var _DropdownButton = __webpack_require__(436);
 
 	var _DropdownButton2 = _interopRequireDefault(_DropdownButton);
 
-	var _ButtonToolbar = __webpack_require__(432);
+	var _ButtonToolbar = __webpack_require__(437);
 
 	var _ButtonToolbar2 = _interopRequireDefault(_ButtonToolbar);
 
@@ -38289,13 +38377,37 @@
 
 	var _Col2 = _interopRequireDefault(_Col);
 
-	var _PDFViewerComponent = __webpack_require__(433);
+	var _PDFViewerComponent = __webpack_require__(438);
 
 	var _PDFViewerComponent2 = _interopRequireDefault(_PDFViewerComponent);
 
+	var _ComingSoonComponent = __webpack_require__(468);
+
+	var _ComingSoonComponent2 = _interopRequireDefault(_ComingSoonComponent);
+
+	var _Okechi_Onyeje_original = __webpack_require__(429);
+
+	var _Okechi_Onyeje_original2 = _interopRequireDefault(_Okechi_Onyeje_original);
+
+	var _Okechi_Onyeje_music_producer = __webpack_require__(430);
+
+	var _Okechi_Onyeje_music_producer2 = _interopRequireDefault(_Okechi_Onyeje_music_producer);
+
+	var _Okechi_Onyeje_hobbyist_hacker = __webpack_require__(431);
+
+	var _Okechi_Onyeje_hobbyist_hacker2 = _interopRequireDefault(_Okechi_Onyeje_hobbyist_hacker);
+
+	var _Okechi_Onyeje_professional = __webpack_require__(432);
+
+	var _Okechi_Onyeje_professional2 = _interopRequireDefault(_Okechi_Onyeje_professional);
+
+	var _Okechi_Onyeje_professional_software_engineer = __webpack_require__(433);
+
+	var _Okechi_Onyeje_professional_software_engineer2 = _interopRequireDefault(_Okechi_Onyeje_professional_software_engineer);
+
 	var _reactRouter = __webpack_require__(171);
 
-	var _lodash = __webpack_require__(463);
+	var _lodash = __webpack_require__(469);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -38306,6 +38418,9 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	//import logo images
+
 
 	var ContentLoaderComponent = function (_React$Component) {
 	    _inherits(ContentLoaderComponent, _React$Component);
@@ -38319,6 +38434,7 @@
 	        _this.renderBarButtons = _this.renderBarButtons.bind(_this);
 	        _this.onContentSelect = _this.onContentSelect.bind(_this);
 	        _this.renderViewPort = _this.renderViewPort.bind(_this);
+	        _this.renderLogo = _this.renderLogo.bind(_this);
 	        _this.state = {
 	            _content: 'none'
 	        };
@@ -38326,6 +38442,32 @@
 	    }
 
 	    _createClass(ContentLoaderComponent, [{
+	        key: 'renderLogo',
+	        value: function renderLogo() {
+	            var logoStyle = {
+	                width: "200",
+	                height: "200"
+	            };
+
+	            if (_lodash2.default.includes(this.props.currentRoute, '/web-development') || _lodash2.default.includes(this.props.currentRoute, '/mobile-development')) {
+
+	                logoStyle.backgroundImage = _Okechi_Onyeje_professional_software_engineer2.default;
+	            } else if (_lodash2.default.includes(this.props.currentRoute, '/professional')) {
+
+	                logoStyle.backgroundImage = _Okechi_Onyeje_professional2.default;
+	            } else if (_lodash2.default.includes(this.props.currentRoute, '/audio-production') || _lodash2.default.includes(this.props.currentRoute, '/podcasting')) {
+
+	                logoStyle.backgroundImage = _Okechi_Onyeje_music_producer2.default;
+	            } else if (_lodash2.default.includes(this.props.currentRoute, '/audio-software-development') || _lodash2.default.includes(this.props.currentRoute, '/hacks')) {
+
+	                logoStyle.backgroundImage = _Okechi_Onyeje_hobbyist_hacker2.default;
+	            } else {
+
+	                logoStyle.backgroundImage = _Okechi_Onyeje_original2.default;
+	            }
+	            return logoStyle.backgroundImage;
+	        }
+	    }, {
 	        key: 'onContentSelect',
 	        value: function onContentSelect(content) {
 	            this.setState({ _content: content });
@@ -38337,6 +38479,12 @@
 	                return _react2.default.createElement('div', { style: { height: '100%',
 	                        width: '100%'
 	                    }, dangerouslySetInnerHTML: this.iframe() });
+	            } else if (viewPortType == 'coming-soon') {
+	                return _react2.default.createElement(
+	                    'div',
+	                    { style: { height: '100%', width: '100%' } },
+	                    _react2.default.createElement(_ComingSoonComponent2.default, { logoPath: this.renderLogo() })
+	                );
 	            } else {
 	                return _react2.default.createElement(
 	                    'div',
@@ -38501,7 +38649,7 @@
 	exports.default = ContentLoaderComponent;
 
 /***/ },
-/* 431 */
+/* 436 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38608,7 +38756,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 432 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38683,7 +38831,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 433 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38698,7 +38846,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactPdfJs = __webpack_require__(434);
+	var _reactPdfJs = __webpack_require__(439);
 
 	var _reactPdfJs2 = _interopRequireDefault(_reactPdfJs);
 
@@ -38833,7 +38981,7 @@
 	exports.default = PDFViewerComponent;
 
 /***/ },
-/* 434 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38842,7 +38990,7 @@
 	  value: true
 	});
 
-	var _Pdf = __webpack_require__(435);
+	var _Pdf = __webpack_require__(440);
 
 	var _Pdf2 = _interopRequireDefault(_Pdf);
 
@@ -38851,7 +38999,7 @@
 	exports.default = _Pdf2.default;
 
 /***/ },
-/* 435 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38860,11 +39008,11 @@
 	  value: true
 	});
 
-	var _stringify = __webpack_require__(436);
+	var _stringify = __webpack_require__(441);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
-	var _keys = __webpack_require__(438);
+	var _keys = __webpack_require__(443);
 
 	var _keys2 = _interopRequireDefault(_keys);
 
@@ -38872,7 +39020,7 @@
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
-	var _getPrototypeOf = __webpack_require__(442);
+	var _getPrototypeOf = __webpack_require__(447);
 
 	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
@@ -38884,7 +39032,7 @@
 
 	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-	var _createClass2 = __webpack_require__(445);
+	var _createClass2 = __webpack_require__(450);
 
 	var _createClass3 = _interopRequireDefault(_createClass2);
 
@@ -38892,7 +39040,7 @@
 
 	var _inherits3 = _interopRequireDefault(_inherits2);
 
-	var _promise = __webpack_require__(449);
+	var _promise = __webpack_require__(454);
 
 	var _promise2 = _interopRequireDefault(_promise);
 
@@ -38902,8 +39050,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(460);
-	__webpack_require__(462);
+	__webpack_require__(465);
+	__webpack_require__(467);
 
 	var makeCancelable = function makeCancelable(promise) {
 	  var hasCanceled = false;
@@ -39322,13 +39470,13 @@
 	}
 
 /***/ },
-/* 436 */
+/* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(437), __esModule: true };
+	module.exports = { "default": __webpack_require__(442), __esModule: true };
 
 /***/ },
-/* 437 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var core  = __webpack_require__(243)
@@ -39338,34 +39486,34 @@
 	};
 
 /***/ },
-/* 438 */
+/* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(439), __esModule: true };
+	module.exports = { "default": __webpack_require__(444), __esModule: true };
 
 /***/ },
-/* 439 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(440);
+	__webpack_require__(445);
 	module.exports = __webpack_require__(243).Object.keys;
 
 /***/ },
-/* 440 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.14 Object.keys(O)
 	var toObject = __webpack_require__(274)
 	  , $keys    = __webpack_require__(257);
 
-	__webpack_require__(441)('keys', function(){
+	__webpack_require__(446)('keys', function(){
 	  return function keys(it){
 	    return $keys(toObject(it));
 	  };
 	});
 
 /***/ },
-/* 441 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// most Object methods by ES6 should accept primitives
@@ -39380,41 +39528,41 @@
 	};
 
 /***/ },
-/* 442 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(443), __esModule: true };
+	module.exports = { "default": __webpack_require__(448), __esModule: true };
 
 /***/ },
-/* 443 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(444);
+	__webpack_require__(449);
 	module.exports = __webpack_require__(243).Object.getPrototypeOf;
 
 /***/ },
-/* 444 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.9 Object.getPrototypeOf(O)
 	var toObject        = __webpack_require__(274)
 	  , $getPrototypeOf = __webpack_require__(293);
 
-	__webpack_require__(441)('getPrototypeOf', function(){
+	__webpack_require__(446)('getPrototypeOf', function(){
 	  return function getPrototypeOf(it){
 	    return $getPrototypeOf(toObject(it));
 	  };
 	});
 
 /***/ },
-/* 445 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	exports.__esModule = true;
 
-	var _defineProperty = __webpack_require__(446);
+	var _defineProperty = __webpack_require__(451);
 
 	var _defineProperty2 = _interopRequireDefault(_defineProperty);
 
@@ -39439,23 +39587,23 @@
 	}();
 
 /***/ },
-/* 446 */
+/* 451 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(447), __esModule: true };
+	module.exports = { "default": __webpack_require__(452), __esModule: true };
 
 /***/ },
-/* 447 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(448);
+	__webpack_require__(453);
 	var $Object = __webpack_require__(243).Object;
 	module.exports = function defineProperty(it, key, desc){
 	  return $Object.defineProperty(it, key, desc);
 	};
 
 /***/ },
-/* 448 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $export = __webpack_require__(241);
@@ -39463,23 +39611,23 @@
 	$export($export.S + $export.F * !__webpack_require__(251), 'Object', {defineProperty: __webpack_require__(247).f});
 
 /***/ },
-/* 449 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(450), __esModule: true };
+	module.exports = { "default": __webpack_require__(455), __esModule: true };
 
 /***/ },
-/* 450 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(310);
 	__webpack_require__(281);
 	__webpack_require__(294);
-	__webpack_require__(451);
+	__webpack_require__(456);
 	module.exports = __webpack_require__(243).Promise;
 
 /***/ },
-/* 451 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -39490,11 +39638,11 @@
 	  , $export            = __webpack_require__(241)
 	  , isObject           = __webpack_require__(249)
 	  , aFunction          = __webpack_require__(245)
-	  , anInstance         = __webpack_require__(452)
-	  , forOf              = __webpack_require__(453)
-	  , speciesConstructor = __webpack_require__(454)
-	  , task               = __webpack_require__(455).set
-	  , microtask          = __webpack_require__(457)()
+	  , anInstance         = __webpack_require__(457)
+	  , forOf              = __webpack_require__(458)
+	  , speciesConstructor = __webpack_require__(459)
+	  , task               = __webpack_require__(460).set
+	  , microtask          = __webpack_require__(462)()
 	  , PROMISE            = 'Promise'
 	  , TypeError          = global.TypeError
 	  , process            = global.process
@@ -39686,7 +39834,7 @@
 	    this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
 	    this._n = false;          // <- notify
 	  };
-	  Internal.prototype = __webpack_require__(458)($Promise.prototype, {
+	  Internal.prototype = __webpack_require__(463)($Promise.prototype, {
 	    // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
 	    then: function then(onFulfilled, onRejected){
 	      var reaction    = newPromiseCapability(speciesConstructor(this, $Promise));
@@ -39713,7 +39861,7 @@
 
 	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
 	__webpack_require__(291)($Promise, PROMISE);
-	__webpack_require__(459)(PROMISE);
+	__webpack_require__(464)(PROMISE);
 	Wrapper = __webpack_require__(243)[PROMISE];
 
 	// statics
@@ -39783,7 +39931,7 @@
 	});
 
 /***/ },
-/* 452 */
+/* 457 */
 /***/ function(module, exports) {
 
 	module.exports = function(it, Constructor, name, forbiddenField){
@@ -39793,7 +39941,7 @@
 	};
 
 /***/ },
-/* 453 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ctx         = __webpack_require__(244)
@@ -39823,7 +39971,7 @@
 	exports.RETURN = RETURN;
 
 /***/ },
-/* 454 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -39836,11 +39984,11 @@
 	};
 
 /***/ },
-/* 455 */
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ctx                = __webpack_require__(244)
-	  , invoke             = __webpack_require__(456)
+	  , invoke             = __webpack_require__(461)
 	  , html               = __webpack_require__(290)
 	  , cel                = __webpack_require__(253)
 	  , global             = __webpack_require__(242)
@@ -39916,7 +40064,7 @@
 	};
 
 /***/ },
-/* 456 */
+/* 461 */
 /***/ function(module, exports) {
 
 	// fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -39937,11 +40085,11 @@
 	};
 
 /***/ },
-/* 457 */
+/* 462 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var global    = __webpack_require__(242)
-	  , macrotask = __webpack_require__(455).set
+	  , macrotask = __webpack_require__(460).set
 	  , Observer  = global.MutationObserver || global.WebKitMutationObserver
 	  , process   = global.process
 	  , Promise   = global.Promise
@@ -40010,7 +40158,7 @@
 	};
 
 /***/ },
-/* 458 */
+/* 463 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var hide = __webpack_require__(246);
@@ -40022,7 +40170,7 @@
 	};
 
 /***/ },
-/* 459 */
+/* 464 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -40041,7 +40189,7 @@
 	};
 
 /***/ },
-/* 460 */
+/* 465 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/* Copyright 2012 Mozilla Foundation
@@ -97224,10 +97372,10 @@
 	 exports.getFilenameFromUrl = pdfjsLibs.pdfjsDisplayDOMUtils.getFilenameFromUrl;
 	 exports.addLinkAttributes = pdfjsLibs.pdfjsDisplayDOMUtils.addLinkAttributes;
 	}));
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(461)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(466)(module)))
 
 /***/ },
-/* 461 */
+/* 466 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -97243,7 +97391,7 @@
 
 
 /***/ },
-/* 462 */
+/* 467 */
 /***/ function(module, exports) {
 
 	/* Copyright 2012 Mozilla Foundation
@@ -97888,7 +98036,70 @@
 
 
 /***/ },
-/* 463 */
+/* 468 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ComingSoonComponent = function (_React$Component) {
+	    _inherits(ComingSoonComponent, _React$Component);
+
+	    function ComingSoonComponent() {
+	        _classCallCheck(this, ComingSoonComponent);
+
+	        return _possibleConstructorReturn(this, (ComingSoonComponent.__proto__ || Object.getPrototypeOf(ComingSoonComponent)).apply(this, arguments));
+	    }
+
+	    _createClass(ComingSoonComponent, [{
+	        key: "render",
+	        value: function render() {
+	            var backgroundStyle = {
+	                width: "100%",
+	                height: "100%",
+	                backgroundColor: 'gray'
+	            };
+	            return _react2.default.createElement(
+	                "div",
+	                { style: backgroundStyle },
+	                _react2.default.createElement(
+	                    "div",
+	                    { style: { width: '100%', height: '200' } },
+	                    _react2.default.createElement(
+	                        "h1",
+	                        { style: { color: 'white', display: 'table-cell', verticalAlign: 'middle', textAlign: 'center' } },
+	                        "Details Coming Soon..."
+	                    )
+	                ),
+	                _react2.default.createElement("img", { src: this.props.logoPath, style: { width: '200', height: '200' } })
+	            );
+	        }
+	    }]);
+
+	    return ComingSoonComponent;
+	}(_react2.default.Component);
+
+	exports.default = ComingSoonComponent;
+
+/***/ },
+/* 469 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -114976,16 +115187,16 @@
 	  }
 	}.call(this));
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(461)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(466)(module)))
 
 /***/ },
-/* 464 */
+/* 470 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(465);
+	var content = __webpack_require__(471);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(235)(content, {});
@@ -115005,7 +115216,7 @@
 	}
 
 /***/ },
-/* 465 */
+/* 471 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(234)();
@@ -115025,7 +115236,7 @@
 	};
 
 /***/ },
-/* 466 */
+/* 472 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -115055,7 +115266,7 @@
 	exports.default = PageNotFound;
 
 /***/ },
-/* 467 */
+/* 473 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -115108,7 +115319,7 @@
 	exports.default = Home;
 
 /***/ },
-/* 468 */
+/* 474 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -115151,7 +115362,7 @@
 	exports.default = ExampleComponent;
 
 /***/ },
-/* 469 */
+/* 475 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
