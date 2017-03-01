@@ -17,14 +17,12 @@ export default class ContentContainerComponent extends React.Component {
         case '/personal':
           return (
             <div>
-              {path}
+              <ContentLoaderComponent viewerType="coming-soon" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
             </div>
           );
         case '/professional':
           return (
-            <div>
-              {path}
-            </div>
+            <ContentLoaderComponent viewerType="coming-soon" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
           );
         case '/web-development':
           return (
@@ -36,7 +34,7 @@ export default class ContentContainerComponent extends React.Component {
           );
         case '/web-development/pearlception':
           return (
-            <ContentLoaderComponent viewerType="invision" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
+            <ContentLoaderComponent viewerType="coming-soon" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
           );
         case '/mobile-development':
           return (
@@ -56,30 +54,24 @@ export default class ContentContainerComponent extends React.Component {
           );
         case '/audio-software-development/wav-blocks-studio':
           return (
-            <ContentLoaderComponent viewerType="pdf" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
+            <ContentLoaderComponent viewerType="coming-soon" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
           );
         case '/audio-production':
           return (
             <div>
-              {path}
+              <ContentLoaderComponent viewerType="coming-soon" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
             </div>
           );
         case '/podcasting':
           return (
             <div>
-              {path}
+              <ContentLoaderComponent viewerType="coming-soon" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
             </div>
           );
         case '/hacks':
           return (
             <div>
-              {path}
-            </div>
-          );
-        case '/contacts':
-          return (
-            <div>
-              {path}
+              <ContentLoaderComponent viewerType="coming-soon" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
             </div>
           );
         default:
