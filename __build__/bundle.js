@@ -62,19 +62,19 @@
 
 	var _ContentContainerComponent2 = _interopRequireDefault(_ContentContainerComponent);
 
-	var _PageNotFound = __webpack_require__(472);
+	var _PageNotFound = __webpack_require__(479);
 
 	var _PageNotFound2 = _interopRequireDefault(_PageNotFound);
 
-	var _Home = __webpack_require__(473);
+	var _Home = __webpack_require__(480);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _ExampleComponent = __webpack_require__(474);
+	var _ExampleComponent = __webpack_require__(481);
 
 	var _ExampleComponent2 = _interopRequireDefault(_ExampleComponent);
 
-	var _ExampleTwoDeepComponent = __webpack_require__(475);
+	var _ExampleTwoDeepComponent = __webpack_require__(482);
 
 	var _ExampleTwoDeepComponent2 = _interopRequireDefault(_ExampleTwoDeepComponent);
 
@@ -181,7 +181,9 @@
 	  _react2.default.createElement(
 	    _reactRouter.Route,
 	    { path: 'audio-software-development', mapMenuTitle: 'Audio Development', component: _ContentContainerComponent2.default },
-	    _react2.default.createElement(_reactRouter.Route, { path: 'wav-blocks-studio', mapMenuTitle: 'WavBlocks Studio', component: _ContentContainerComponent2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: 'wav-blocks-studio', mapMenuTitle: 'WavBlocks Studio', component: _ContentContainerComponent2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'ultra-muse-player', mapMenuTitle: 'UltraMuse Player', component: _ContentContainerComponent2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: 'umuse-audio-plugin', mapMenuTitle: 'UMuse DAW Plugin', component: _ContentContainerComponent2.default })
 	  ),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'audio-production', mapMenuTitle: 'Audio Production', component: _ContentContainerComponent2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: 'podcasting', mapMenuTitle: 'Podcasting', component: _ContentContainerComponent2.default }),
@@ -26093,8 +26095,8 @@
 	        key: 'renderLogo',
 	        value: function renderLogo() {
 	            var logoStyle = {
-	                width: "100",
-	                height: "100"
+	                width: "75",
+	                height: "75"
 	            };
 
 	            if (_.includes(this.props.currentRoute, '/web-development') || _.includes(this.props.currentRoute, '/mobile-development')) {
@@ -26200,7 +26202,7 @@
 	                                    { xs: 6, xsOffset: 3 },
 	                                    _react2.default.createElement(
 	                                        _Nav2.default,
-	                                        { bsStyle: 'pills' },
+	                                        { bsStyle: 'pills', style: { alignVertical: 'center' } },
 	                                        _react2.default.createElement(
 	                                            _NavDropdown2.default,
 	                                            { eventKey: 1, title: 'About', id: 'basic-nav-dropdown', style: { textColor: "white" } },
@@ -26323,27 +26325,6 @@
 	                                                        _reactRouter.Link,
 	                                                        { to: '/hacks' },
 	                                                        'Hardware & Software Hacks'
-	                                                    )
-	                                                )
-	                                            )
-	                                        ),
-	                                        _react2.default.createElement(
-	                                            _Row2.default,
-	                                            null,
-	                                            _react2.default.createElement(
-	                                                _Col2.default,
-	                                                { xs: 6, xsOffset: 4 },
-	                                                _react2.default.createElement(
-	                                                    _NavItem2.default,
-	                                                    { eventKey: '4', title: 'Contact Me' },
-	                                                    _react2.default.createElement(
-	                                                        _Button2.default,
-	                                                        {
-	                                                            bsStyle: 'default',
-	                                                            bsSize: 'extra-small',
-	                                                            onClick: this.open
-	                                                        },
-	                                                        'Contact'
 	                                                    )
 	                                                )
 	                                            )
@@ -38245,7 +38226,7 @@
 
 	var _ContentLoaderComponent2 = _interopRequireDefault(_ContentLoaderComponent);
 
-	var _contentContainer = __webpack_require__(470);
+	var _contentContainer = __webpack_require__(477);
 
 	var _contentContainer2 = _interopRequireDefault(_contentContainer);
 
@@ -38288,20 +38269,24 @@
 	        case '/professional':
 	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/web-development':
-	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'invision', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
+	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'dev-cover', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/web-development/aqua':
 	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'invision', invisionURL: aquaInvisionURL, style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/web-development/pearlception':
 	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/mobile-development':
-	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'invision', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
+	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'dev-cover', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/mobile-development/vendoo':
 	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'invision', invisionURL: vendooInvisionURL, style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/mobile-development/gethip':
 	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'invision', invisionURL: getHipInvisionURL, style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/audio-software-development':
-	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'invision', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
+	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'dev-cover', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/audio-software-development/wav-blocks-studio':
+	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
+	        case '/audio-software-development/ultra-muse-player':
+	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
+	        case '/audio-software-development/umuse-audio-plugin':
 	          return _react2.default.createElement(_ContentLoaderComponent2.default, { viewerType: 'coming-soon', invisionURL: '', style: _contentContainer2.default, currentRoute: this.props.currentRoute });
 	        case '/audio-production':
 	          return _react2.default.createElement(
@@ -38385,6 +38370,10 @@
 
 	var _ComingSoonComponent2 = _interopRequireDefault(_ComingSoonComponent);
 
+	var _DevCoverComponent = __webpack_require__(469);
+
+	var _DevCoverComponent2 = _interopRequireDefault(_DevCoverComponent);
+
 	var _Okechi_Onyeje_original = __webpack_require__(429);
 
 	var _Okechi_Onyeje_original2 = _interopRequireDefault(_Okechi_Onyeje_original);
@@ -38407,7 +38396,7 @@
 
 	var _reactRouter = __webpack_require__(171);
 
-	var _lodash = __webpack_require__(469);
+	var _lodash = __webpack_require__(476);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -38479,6 +38468,12 @@
 	                return _react2.default.createElement('div', { style: { height: '100%',
 	                        width: '100%'
 	                    }, dangerouslySetInnerHTML: this.iframe() });
+	            } else if (viewPortType == 'dev-cover') {
+	                return _react2.default.createElement(
+	                    'div',
+	                    { style: { height: '100%', width: '100%' } },
+	                    _react2.default.createElement(_DevCoverComponent2.default, { currentRoute: this.props.currentRoute })
+	                );
 	            } else if (viewPortType == 'coming-soon') {
 	                return _react2.default.createElement(
 	                    'div',
@@ -38542,8 +38537,7 @@
 	                                    )
 	                                )
 	                            )
-	                        ),
-	                        _react2.default.createElement(_DropdownButton2.default, { bsStyle: 'info', dropup: true, title: 'React/Node.JS' })
+	                        )
 	                    )
 	                );
 	            }
@@ -38583,9 +38577,7 @@
 	                                    )
 	                                )
 	                            )
-	                        ),
-	                        _react2.default.createElement(_DropdownButton2.default, { bsStyle: 'success', title: 'Android', dropup: true }),
-	                        _react2.default.createElement(_DropdownButton2.default, { bsStyle: 'info', dropup: true, title: 'React Native' })
+	                        )
 	                    )
 	                );
 	            }
@@ -38611,9 +38603,38 @@
 	                                        'WavBlocks Studio'
 	                                    )
 	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                _MenuItem2.default,
+	                                { eventKey: '2' },
+	                                _react2.default.createElement(
+	                                    'li',
+	                                    null,
+	                                    _react2.default.createElement(
+	                                        _reactRouter.Link,
+	                                        { to: '/audio-software-development/umuse-audio-plugin' },
+	                                        'UMuse DAW Plugin'
+	                                    )
+	                                )
 	                            )
 	                        ),
-	                        _react2.default.createElement(_DropdownButton2.default, { bsStyle: 'success', dropup: true, title: 'Python' })
+	                        _react2.default.createElement(
+	                            _DropdownButton2.default,
+	                            { bsStyle: 'success', dropup: true, title: 'React/Electron' },
+	                            _react2.default.createElement(
+	                                _MenuItem2.default,
+	                                { eventKey: '1' },
+	                                _react2.default.createElement(
+	                                    'li',
+	                                    null,
+	                                    _react2.default.createElement(
+	                                        _reactRouter.Link,
+	                                        { to: '/audio-software-development/ultra-muse-player' },
+	                                        'UltraMuse Player'
+	                                    )
+	                                )
+	                            )
+	                        )
 	                    )
 	                );
 	            }
@@ -98102,6 +98123,254 @@
 /* 469 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _mobile_development_cover = __webpack_require__(470);
+
+	var _mobile_development_cover2 = _interopRequireDefault(_mobile_development_cover);
+
+	var _audio_development_cover = __webpack_require__(472);
+
+	var _audio_development_cover2 = _interopRequireDefault(_audio_development_cover);
+
+	var _web_development_cover = __webpack_require__(474);
+
+	var _web_development_cover2 = _interopRequireDefault(_web_development_cover);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var DevCoverComponent = function (_React$Component) {
+	  _inherits(DevCoverComponent, _React$Component);
+
+	  function DevCoverComponent() {
+	    _classCallCheck(this, DevCoverComponent);
+
+	    return _possibleConstructorReturn(this, (DevCoverComponent.__proto__ || Object.getPrototypeOf(DevCoverComponent)).apply(this, arguments));
+	  }
+
+	  _createClass(DevCoverComponent, [{
+	    key: 'renderCover',
+	    value: function renderCover() {
+	      if (this.props.currentRoute == '/mobile-development') {
+	        _react2.default.createElement(
+	          'div',
+	          { className: _mobile_development_cover2.default.mobile_development_cover },
+	          _react2.default.createElement(
+	            'div',
+	            { className: _mobile_development_cover2.default.mobile_development_title },
+	            'MOBILE'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: _mobile_development_cover2.default.mobile_development_content },
+	            ' '
+	          )
+	        );
+	      } else if (this.props.currentRoute == '/web-development') {
+	        _react2.default.createElement(
+	          'div',
+	          { className: _web_development_cover2.default.web_development_cover },
+	          _react2.default.createElement(
+	            'div',
+	            { className: _web_development_cover2.default.web_development_title },
+	            'WEB'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: _web_development_cover2.default.web_development_content },
+	            "< / >",
+	            ' '
+	          )
+	        );
+	      } else {
+	        _react2.default.createElement(
+	          'div',
+	          { className: _audio_development_cover2.default.audio_development_cover },
+	          _react2.default.createElement(
+	            'div',
+	            { className: _audio_development_cover2.default.audio_development_title },
+	            'AUDIO'
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: _audio_development_cover2.default.audio_development_content },
+	            'VST/AU '
+	          )
+	        );
+	      }
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var backgroundStyle = {
+	        width: "100%",
+	        height: "100%"
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        this.renderCover()
+	      );
+	    }
+	  }]);
+
+	  return DevCoverComponent;
+	}(_react2.default.Component);
+
+	exports.default = DevCoverComponent;
+
+/***/ },
+/* 470 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(471);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(235)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./mobile_development_cover.css", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./mobile_development_cover.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 471 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(234)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".mobile_development_cover__mobile_development_cover___38pgd {\n  width: 200px;\n  height: 200px;\n  overflow: visible;\n  opacity: 1;\n  display: block;\n  cursor: inherit;\n  box-sizing: border-box;\n  background: #67A07F;\n  background-size: auto;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-flex-wrap: nowrap;\n  -ms-flex-wrap: nowrap;\n  flex-wrap: nowrap;\n  -webkit-box-align: stretch;\n  -webkit-align-items: stretch;\n  -ms-flex-align: stretch;\n  align-items: stretch;\n  -webkit-align-content: flex-start;\n  -ms-flex-line-pack: start;\n  align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  -webkit-align-self: auto;\n  -ms-flex-item-align: auto;\n  align-self: auto;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 auto;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  padding-top: 0px;\n  padding-left: 0px;\n  padding-right: 0px;\n  padding-bottom: 0px;\n  margin-top: 0px;\n  margin-left: 0px;\n  margin-right: 0px;\n  margin-bottom: 0px;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  position: static;\n  filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -ms-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -webkit-transform-origin: 50% 50%;\n  -ms-transform-origin: 50% 50%;\n  transform-origin: 50% 50%;\n  border-top: 0px solid #000;\n  border-left: 0px solid #000;\n  border-right: 0px solid #000;\n  border-bottom: 0px solid #000;\n  border-radius: 0px 0px 0px 0px;\n  font-family: inherit;\n  color: #000;\n  font-size: inherit;\n  letter-spacing: 0px;\n  word-spacing: 0px;\n  line-height: inherit;\n  font-weight: inherit;\n  font-style: inherit;\n  text-align: inherit;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: inherit;\n  white-space: inherit\n}\n\n.mobile_development_cover__mobile_development_cover___38pgd:hover {\n}\n\n.mobile_development_cover__mobile_development_cover___38pgd:active {\n}\n\n.mobile_development_cover__mobile_development_cover___38pgd:focus {\n}\n\n.mobile_development_cover__mobile_development_title___bUScb {\n  width: auto;\n  height: auto;\n  overflow: visible;\n  opacity: 0.75;\n  display: block;\n  cursor: inherit;\n  box-sizing: border-box;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-flex-wrap: nowrap;\n  -ms-flex-wrap: nowrap;\n  flex-wrap: nowrap;\n  -webkit-box-align: stretch;\n  -webkit-align-items: stretch;\n  -ms-flex-align: stretch;\n  align-items: stretch;\n  -webkit-align-content: flex-start;\n  -ms-flex-line-pack: start;\n  align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  -webkit-align-self: auto;\n  -ms-flex-item-align: auto;\n  align-self: auto;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 auto;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  padding-top: 10px;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-bottom: 30px;\n  margin-top: 0px;\n  margin-left: 0px;\n  margin-right: 0px;\n  margin-bottom: 0px;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  position: static;\n  filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -ms-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -webkit-transform-origin: 50% 50%;\n  -ms-transform-origin: 50% 50%;\n  transform-origin: 50% 50%;\n  border-top: 0px solid #000;\n  border-left: 0px solid #000;\n  border-right: 0px solid #000;\n  border-bottom: 0px solid #000;\n  border-radius: 0px 0px 0px 0px;\n  font-family: inherit;\n  color: #39D9D4;\n  font-size: 45px;\n  letter-spacing: 0px;\n  word-spacing: 0px;\n  line-height: inherit;\n  font-weight: bold;\n  font-style: normal;\n  text-align: center;\n  text-decoration: inherit;\n  text-transform: uppercase;\n  text-overflow: inherit;\n  white-space: inherit\n}\n\n.mobile_development_cover__mobile_development_title___bUScb:hover {\n}\n\n.mobile_development_cover__mobile_development_title___bUScb:active {\n}\n\n.mobile_development_cover__mobile_development_title___bUScb:focus {\n}\n\n.mobile_development_cover__mobile_development_content___25xJi {\n  width: auto;\n  height: auto;\n  overflow: visible;\n  opacity: 1;\n  display: block;\n  cursor: inherit;\n  box-sizing: border-box;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-flex-wrap: nowrap;\n  -ms-flex-wrap: nowrap;\n  flex-wrap: nowrap;\n  -webkit-box-align: stretch;\n  -webkit-align-items: stretch;\n  -ms-flex-align: stretch;\n  align-items: stretch;\n  -webkit-align-content: flex-start;\n  -ms-flex-line-pack: start;\n  align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  -webkit-align-self: auto;\n  -ms-flex-item-align: auto;\n  align-self: auto;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 auto;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  padding-top: 10px;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-bottom: 20px;\n  margin-top: 0px;\n  margin-left: 0px;\n  margin-right: 0px;\n  margin-bottom: 0px;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  position: static;\n  filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -ms-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -webkit-transform-origin: 50% 50%;\n  -ms-transform-origin: 50% 50%;\n  transform-origin: 50% 50%;\n  border-top: 0px solid #000;\n  border-left: 0px solid #000;\n  border-right: 0px solid #000;\n  border-bottom: 0px solid #000;\n  border-radius: 0px 0px 0px 0px;\n  font-family: inherit;\n  color: #8AD7DC;\n  font-size: 30px;\n  letter-spacing: 0px;\n  word-spacing: 0px;\n  line-height: inherit;\n  font-weight: inherit;\n  font-style: inherit;\n  text-align: center;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: inherit;\n  white-space: inherit\n}\n\n.mobile_development_cover__mobile_development_content___25xJi:hover {\n}\n\n.mobile_development_cover__mobile_development_content___25xJi:active {\n}\n\n.mobile_development_cover__mobile_development_content___25xJi:focus {\n} \nbody { margin: 0; }", ""]);
+
+	// exports
+	exports.locals = {
+		"mobile_development_cover": "mobile_development_cover__mobile_development_cover___38pgd",
+		"mobile_development_title": "mobile_development_cover__mobile_development_title___bUScb",
+		"mobile_development_content": "mobile_development_cover__mobile_development_content___25xJi"
+	};
+
+/***/ },
+/* 472 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(473);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(235)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./audio_development_cover.css", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./audio_development_cover.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 473 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(234)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".audio_development_cover__audio_development_cover___q3flf {\n  width: 200px;\n  height: 200px;\n  overflow: visible;\n  opacity: 1;\n  display: block;\n  cursor: inherit;\n  box-sizing: border-box;\n  background: #A08367;\n  background-size: auto;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-flex-wrap: nowrap;\n  -ms-flex-wrap: nowrap;\n  flex-wrap: nowrap;\n  -webkit-box-align: stretch;\n  -webkit-align-items: stretch;\n  -ms-flex-align: stretch;\n  align-items: stretch;\n  -webkit-align-content: flex-start;\n  -ms-flex-line-pack: start;\n  align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  -webkit-align-self: auto;\n  -ms-flex-item-align: auto;\n  align-self: auto;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 auto;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  padding-top: 0px;\n  padding-left: 0px;\n  padding-right: 0px;\n  padding-bottom: 0px;\n  margin-top: 0px;\n  margin-left: 0px;\n  margin-right: 0px;\n  margin-bottom: 0px;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  position: static;\n  filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -ms-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -webkit-transform-origin: 50% 50%;\n  -ms-transform-origin: 50% 50%;\n  transform-origin: 50% 50%;\n  border-top: 0px solid #000;\n  border-left: 0px solid #000;\n  border-right: 0px solid #000;\n  border-bottom: 0px solid #000;\n  border-radius: 0px 0px 0px 0px;\n  font-family: inherit;\n  color: #000;\n  font-size: inherit;\n  letter-spacing: 0px;\n  word-spacing: 0px;\n  line-height: inherit;\n  font-weight: inherit;\n  font-style: inherit;\n  text-align: inherit;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: inherit;\n  white-space: inherit\n}\n\n.audio_development_cover__audio_development_cover___q3flf:hover {\n}\n\n.audio_development_cover__audio_development_cover___q3flf:active {\n}\n\n.audio_development_cover__audio_development_cover___q3flf:focus {\n}\n\n.audio_development_cover__audio_development_title___n1OvA {\n  width: auto;\n  height: auto;\n  overflow: visible;\n  opacity: 0.75;\n  display: block;\n  cursor: inherit;\n  box-sizing: border-box;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-flex-wrap: nowrap;\n  -ms-flex-wrap: nowrap;\n  flex-wrap: nowrap;\n  -webkit-box-align: stretch;\n  -webkit-align-items: stretch;\n  -ms-flex-align: stretch;\n  align-items: stretch;\n  -webkit-align-content: flex-start;\n  -ms-flex-line-pack: start;\n  align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  -webkit-align-self: auto;\n  -ms-flex-item-align: auto;\n  align-self: auto;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 auto;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  padding-top: 10px;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-bottom: 30px;\n  margin-top: 0px;\n  margin-left: 0px;\n  margin-right: 0px;\n  margin-bottom: 0px;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  position: static;\n  filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -ms-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -webkit-transform-origin: 50% 50%;\n  -ms-transform-origin: 50% 50%;\n  transform-origin: 50% 50%;\n  border-top: 0px solid #000;\n  border-left: 0px solid #000;\n  border-right: 0px solid #000;\n  border-bottom: 0px solid #000;\n  border-radius: 0px 0px 0px 0px;\n  font-family: inherit;\n  color: #D39851;\n  font-size: 50px;\n  letter-spacing: 0px;\n  word-spacing: 0px;\n  line-height: inherit;\n  font-weight: bold;\n  font-style: normal;\n  text-align: center;\n  text-decoration: inherit;\n  text-transform: uppercase;\n  text-overflow: inherit;\n  white-space: inherit\n}\n\n.audio_development_cover__audio_development_title___n1OvA:hover {\n}\n\n.audio_development_cover__audio_development_title___n1OvA:active {\n}\n\n.audio_development_cover__audio_development_title___n1OvA:focus {\n}\n\n.audio_development_cover__audio_development_content___2R0EP {\n  width: auto;\n  height: auto;\n  overflow: visible;\n  opacity: 1;\n  display: block;\n  cursor: inherit;\n  box-sizing: border-box;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-flex-wrap: nowrap;\n  -ms-flex-wrap: nowrap;\n  flex-wrap: nowrap;\n  -webkit-box-align: stretch;\n  -webkit-align-items: stretch;\n  -ms-flex-align: stretch;\n  align-items: stretch;\n  -webkit-align-content: flex-start;\n  -ms-flex-line-pack: start;\n  align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  -webkit-align-self: auto;\n  -ms-flex-item-align: auto;\n  align-self: auto;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 auto;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  padding-top: 10px;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-bottom: 20px;\n  margin-top: 0px;\n  margin-left: 0px;\n  margin-right: 0px;\n  margin-bottom: 0px;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  position: static;\n  filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -ms-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -webkit-transform-origin: 50% 50%;\n  -ms-transform-origin: 50% 50%;\n  transform-origin: 50% 50%;\n  border-top: 0px solid #000;\n  border-left: 0px solid #000;\n  border-right: 0px solid #000;\n  border-bottom: 0px solid #000;\n  border-radius: 0px 0px 0px 0px;\n  font-family: inherit;\n  color: #C8B09B;\n  font-size: 25px;\n  letter-spacing: 0px;\n  word-spacing: 0px;\n  line-height: inherit;\n  font-weight: inherit;\n  font-style: inherit;\n  text-align: center;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: inherit;\n  white-space: inherit\n}\n\n.audio_development_cover__audio_development_content___2R0EP:hover {\n}\n\n.audio_development_cover__audio_development_content___2R0EP:active {\n}\n\n.audio_development_cover__audio_development_content___2R0EP:focus {\n} \nbody { margin: 0; }", ""]);
+
+	// exports
+	exports.locals = {
+		"audio_development_cover": "audio_development_cover__audio_development_cover___q3flf",
+		"audio_development_title": "audio_development_cover__audio_development_title___n1OvA",
+		"audio_development_content": "audio_development_cover__audio_development_content___2R0EP"
+	};
+
+/***/ },
+/* 474 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(475);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(235)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./web_development_cover.css", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js?modules=true&localIdentName=[name]__[local]___[hash:base64:5]!./web_development_cover.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 475 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(234)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".web_development_cover__web_development_cover___14cZW {\n  width: 200px;\n  height: 200px;\n  overflow: visible;\n  opacity: 1;\n  display: block;\n  cursor: inherit;\n  box-sizing: border-box;\n  background: #77A067;\n  background-size: auto;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-flex-wrap: nowrap;\n  -ms-flex-wrap: nowrap;\n  flex-wrap: nowrap;\n  -webkit-box-align: stretch;\n  -webkit-align-items: stretch;\n  -ms-flex-align: stretch;\n  align-items: stretch;\n  -webkit-align-content: flex-start;\n  -ms-flex-line-pack: start;\n  align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  -webkit-align-self: auto;\n  -ms-flex-item-align: auto;\n  align-self: auto;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 auto;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  padding-top: 0px;\n  padding-left: 0px;\n  padding-right: 0px;\n  padding-bottom: 0px;\n  margin-top: 0px;\n  margin-left: 0px;\n  margin-right: 0px;\n  margin-bottom: 0px;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  position: static;\n  filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -ms-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -webkit-transform-origin: 50% 50%;\n  -ms-transform-origin: 50% 50%;\n  transform-origin: 50% 50%;\n  border-top: 0px solid #000;\n  border-left: 0px solid #000;\n  border-right: 0px solid #000;\n  border-bottom: 0px solid #000;\n  border-radius: 0px 0px 0px 0px;\n  font-family: inherit;\n  color: #000;\n  font-size: inherit;\n  letter-spacing: 0px;\n  word-spacing: 0px;\n  line-height: inherit;\n  font-weight: inherit;\n  font-style: inherit;\n  text-align: inherit;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: inherit;\n  white-space: inherit\n}\n\n.web_development_cover__web_development_cover___14cZW:hover {\n}\n\n.web_development_cover__web_development_cover___14cZW:active {\n}\n\n.web_development_cover__web_development_cover___14cZW:focus {\n}\n\n.web_development_cover__web_development_title___3-6ce {\n  width: auto;\n  height: auto;\n  overflow: visible;\n  opacity: 0.75;\n  display: block;\n  cursor: inherit;\n  box-sizing: border-box;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-flex-wrap: nowrap;\n  -ms-flex-wrap: nowrap;\n  flex-wrap: nowrap;\n  -webkit-box-align: stretch;\n  -webkit-align-items: stretch;\n  -ms-flex-align: stretch;\n  align-items: stretch;\n  -webkit-align-content: flex-start;\n  -ms-flex-line-pack: start;\n  align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  -webkit-align-self: auto;\n  -ms-flex-item-align: auto;\n  align-self: auto;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 auto;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  padding-top: 10px;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-bottom: 30px;\n  margin-top: 0px;\n  margin-left: 0px;\n  margin-right: 0px;\n  margin-bottom: 0px;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  position: static;\n  filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -ms-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -webkit-transform-origin: 50% 50%;\n  -ms-transform-origin: 50% 50%;\n  transform-origin: 50% 50%;\n  border-top: 0px solid #000;\n  border-left: 0px solid #000;\n  border-right: 0px solid #000;\n  border-bottom: 0px solid #000;\n  border-radius: 0px 0px 0px 0px;\n  font-family: inherit;\n  color: #50D95B;\n  font-size: 50px;\n  letter-spacing: 0px;\n  word-spacing: 0px;\n  line-height: inherit;\n  font-weight: bold;\n  font-style: normal;\n  text-align: center;\n  text-decoration: inherit;\n  text-transform: uppercase;\n  text-overflow: inherit;\n  white-space: inherit\n}\n\n.web_development_cover__web_development_title___3-6ce:hover {\n}\n\n.web_development_cover__web_development_title___3-6ce:active {\n}\n\n.web_development_cover__web_development_title___3-6ce:focus {\n}\n\n.web_development_cover__web_development_content___1a_gs {\n  width: auto;\n  height: auto;\n  overflow: visible;\n  opacity: 1;\n  display: block;\n  cursor: inherit;\n  box-sizing: border-box;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -webkit-flex-direction: row;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-flex-wrap: nowrap;\n  -ms-flex-wrap: nowrap;\n  flex-wrap: nowrap;\n  -webkit-box-align: stretch;\n  -webkit-align-items: stretch;\n  -ms-flex-align: stretch;\n  align-items: stretch;\n  -webkit-align-content: flex-start;\n  -ms-flex-line-pack: start;\n  align-content: flex-start;\n  -webkit-box-pack: start;\n  -webkit-justify-content: flex-start;\n  -ms-flex-pack: start;\n  justify-content: flex-start;\n  -webkit-align-self: auto;\n  -ms-flex-item-align: auto;\n  align-self: auto;\n  -webkit-box-flex: 0;\n  -webkit-flex: 0 0 auto;\n  -ms-flex: 0 0 auto;\n  flex: 0 0 auto;\n  padding-top: 10px;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-bottom: 20px;\n  margin-top: 0px;\n  margin-left: 0px;\n  margin-right: 0px;\n  margin-bottom: 0px;\n  top: 0px;\n  left: 0px;\n  right: 0px;\n  bottom: 0px;\n  position: static;\n  filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-filter: blur(0px) grayscale(0) sepia(0) invert(0) saturate(1) brightness(1) contrast(1) opacity(1) hue-rotate(0deg);\n  -webkit-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -ms-transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  transform: translateX(0px) translateY(0px) rotate(0deg) scaleX(1) scaleY(1) skewX(0deg) skewY(0deg);\n  -webkit-transform-origin: 50% 50%;\n  -ms-transform-origin: 50% 50%;\n  transform-origin: 50% 50%;\n  border-top: 0px solid #000;\n  border-left: 0px solid #000;\n  border-right: 0px solid #000;\n  border-bottom: 0px solid #000;\n  border-radius: 0px 0px 0px 0px;\n  font-family: inherit;\n  color: #8ADCB4;\n  font-size: 30px;\n  letter-spacing: 0px;\n  word-spacing: 0px;\n  line-height: inherit;\n  font-weight: inherit;\n  font-style: inherit;\n  text-align: center;\n  text-decoration: inherit;\n  text-transform: inherit;\n  text-overflow: inherit;\n  white-space: inherit\n}\n\n.web_development_cover__web_development_content___1a_gs:hover {\n}\n\n.web_development_cover__web_development_content___1a_gs:active {\n}\n\n.web_development_cover__web_development_content___1a_gs:focus {\n} \nbody { margin: 0; }", ""]);
+
+	// exports
+	exports.locals = {
+		"web_development_cover": "web_development_cover__web_development_cover___14cZW",
+		"web_development_title": "web_development_cover__web_development_title___3-6ce",
+		"web_development_content": "web_development_cover__web_development_content___1a_gs"
+	};
+
+/***/ },
+/* 476 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
 	 * @license
 	 * Lodash <https://lodash.com/>
@@ -115190,13 +115459,13 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(466)(module)))
 
 /***/ },
-/* 470 */
+/* 477 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(471);
+	var content = __webpack_require__(478);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(235)(content, {});
@@ -115216,7 +115485,7 @@
 	}
 
 /***/ },
-/* 471 */
+/* 478 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(234)();
@@ -115236,7 +115505,7 @@
 	};
 
 /***/ },
-/* 472 */
+/* 479 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -115266,7 +115535,7 @@
 	exports.default = PageNotFound;
 
 /***/ },
-/* 473 */
+/* 480 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -115319,7 +115588,7 @@
 	exports.default = Home;
 
 /***/ },
-/* 474 */
+/* 481 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -115362,7 +115631,7 @@
 	exports.default = ExampleComponent;
 
 /***/ },
-/* 475 */
+/* 482 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

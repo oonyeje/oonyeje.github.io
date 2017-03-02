@@ -104,6 +104,8 @@ const routes = (
     </Route>
     <Route path="audio-software-development" mapMenuTitle="Audio Development" component={ContentContainerComponent}>
       <Route path="wav-blocks-studio" mapMenuTitle="WavBlocks Studio" component={ContentContainerComponent}/>
+      <Route path="ultra-muse-player" mapMenuTitle="UltraMuse Player" component={ContentContainerComponent}/>
+      <Route path="umuse-audio-plugin" mapMenuTitle="UMuse DAW Plugin" component={ContentContainerComponent}/>
     </Route>
     <Route path="audio-production" mapMenuTitle="Audio Production" component={ContentContainerComponent}/>
     <Route path="podcasting" mapMenuTitle="Podcasting" component={ContentContainerComponent}/>

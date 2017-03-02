@@ -37,8 +37,8 @@ export default class NavigationComponent extends React.Component {
 
     renderLogo() {
         var logoStyle = {
-            width: "100",
-            height: "100"
+            width: "75",
+            height: "75"
         }
 
         if (_.includes(this.props.currentRoute, '/web-development')
@@ -125,7 +125,7 @@ export default class NavigationComponent extends React.Component {
                         <NavigationBar.Collapse>
                             <Row>
                                 <Col xs={6} xsOffset={3}>
-                                    <Nav bsStyle='pills'>
+                                    <Nav bsStyle='pills' style={{alignVertical: 'center'}}>
                                         <NavDropdown eventKey={1} title="About" id="basic-nav-dropdown" style={{textColor: "white"}}>
                                             <MenuItem eventKey={1.1}><li onClick={() => this.onClickHandler(this.props.currentRoute)} ><Link to={'/personal'}>Personal</Link></li></MenuItem>
                                             <MenuItem eventKey={1.2}><li onClick={() => this.onClickHandler(this.props.currentRoute)} ><Link to={'/professional'}>Professional</Link></li></MenuItem>
@@ -140,19 +140,17 @@ export default class NavigationComponent extends React.Component {
                                             <MenuItem eventKey={3.2}><li onClick={() => this.onClickHandler(this.props.currentRoute)} ><Link to={'/podcasting'}>Podcasts</Link></li></MenuItem>
                                             <MenuItem eventKey={3.3}><li onClick={() => this.onClickHandler(this.props.currentRoute)} ><Link to={'/hacks'}>Hardware & Software Hacks</Link></li></MenuItem>
                                         </ NavDropdown>
-                                        <Row>
+                                        {/*<Row>
                                             <Col xs={6} xsOffset={4}> 
                                                 <NavItem eventKey="4" title="Contact Me">
-                                                    {/*<Link to={'/contact'}>*/}
-                                                        <Button
-                                                        bsStyle="default"
-                                                        bsSize="extra-small"
-                                                        onClick={this.open}
-                                                        >Contact</Button>
-                                                    {/*</Link>*/}
+                                                    <Button
+                                                    bsStyle="default"
+                                                    bsSize="extra-small"
+                                                    onClick={this.open}
+                                                    >Contact</Button>
                                                 </NavItem>
                                             </Col>
-                                        </Row>
+                                        </Row>*/}
                                     </Nav>
                                 </Col>
                             </Row>

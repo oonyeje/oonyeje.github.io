@@ -5,6 +5,8 @@ import MenuItem from  'react-bootstrap/lib/MenuItem';
 import Col from 'react-bootstrap/lib/Col'
 import PDFViewerComponent from './PDFViewerComponent';
 import ComingSoonComponent from './ComingSoonComponent';
+import DevCoverComponent from './DevCoverComponent';
+
 
 //import logo images
 import personalLogo from '../../assets/images/Okechi_Onyeje_original.png';
@@ -75,6 +77,13 @@ export default class ContentLoaderComponent extends React.Component {
                     );
                
             }
+            else if (viewPortType == 'dev-cover'){
+                return(
+                    <div style={{height: '100%', width: '100%'}}>
+                        <DevCoverComponent currentRoute={this.props.currentRoute} />
+                    </div>
+                );
+            }
             else if (viewPortType == 'coming-soon'){
                 return(
                     <div style={{height: '100%', width: '100%'}}>
@@ -114,7 +123,7 @@ export default class ContentLoaderComponent extends React.Component {
                             <MenuItem eventKey="1" ><li><Link to={'/web-development/aqua'}>Aqua Hotel Management</Link></li></MenuItem>
                             <MenuItem eventKey="2" ><li><Link to={'/web-development/pearlception'}>Pearlception Dashboard</Link></li></MenuItem>
                         </DropdownButton>
-                        <DropdownButton bsStyle="info" dropup title="React/Node.JS"></DropdownButton>
+                        {/*<DropdownButton bsStyle="info" dropup title="React/Node.JS"></DropdownButton>*/}
                     </ButtonToolbar>
 
                 </div>
@@ -128,8 +137,8 @@ export default class ContentLoaderComponent extends React.Component {
                             <MenuItem eventKey="1" ><li><Link to={'/mobile-development/gethip'}>GetHip!</Link></li></MenuItem>
                             <MenuItem eventKey="2" ><li><Link to={'/mobile-development/vendoo'}>Vendoo</Link></li></MenuItem>
                         </DropdownButton>
-                        <DropdownButton bsStyle="success" title="Android" dropup></DropdownButton>
-                        <DropdownButton bsStyle="info" dropup title="React Native"></DropdownButton>
+                        {/*<DropdownButton bsStyle="success" title="Android" dropup></DropdownButton>
+                        <DropdownButton bsStyle="info" dropup title="React Native"></DropdownButton>*/}
                     </ButtonToolbar>
                 </div>
             );
@@ -140,8 +149,11 @@ export default class ContentLoaderComponent extends React.Component {
                     <ButtonToolbar>
                         <DropdownButton bsStyle="primary" dropup title="C++">
                             <MenuItem eventKey="1" ><li><Link to={'/audio-software-development/wav-blocks-studio'}>WavBlocks Studio</Link></li></MenuItem>
+                            <MenuItem eventKey="2" ><li><Link to={'/audio-software-development/umuse-audio-plugin'}>UMuse DAW Plugin</Link></li></MenuItem>                                                                        
                         </DropdownButton>
-                        <DropdownButton bsStyle="success" dropup title="Python"></DropdownButton>
+                        <DropdownButton bsStyle="success" dropup title="React/Electron">
+                            <MenuItem eventKey="1" ><li><Link to={'/audio-software-development/ultra-muse-player'}>UltraMuse Player</Link></li></MenuItem>
+                        </DropdownButton>
                     </ButtonToolbar>
                 </div>
             );

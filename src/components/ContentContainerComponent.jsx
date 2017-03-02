@@ -26,7 +26,7 @@ export default class ContentContainerComponent extends React.Component {
           );
         case '/web-development':
           return (
-            <ContentLoaderComponent viewerType="invision" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
+            <ContentLoaderComponent viewerType="dev-cover" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
           );
         case '/web-development/aqua':
           return (
@@ -38,7 +38,7 @@ export default class ContentContainerComponent extends React.Component {
           );
         case '/mobile-development':
           return (
-            <ContentLoaderComponent viewerType="invision" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
+            <ContentLoaderComponent viewerType="dev-cover" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
           );
         case '/mobile-development/vendoo':
           return (
@@ -50,9 +50,17 @@ export default class ContentContainerComponent extends React.Component {
           );
         case '/audio-software-development':
           return (
-            <ContentLoaderComponent viewerType="invision" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
+            <ContentLoaderComponent viewerType="dev-cover" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
           );
         case '/audio-software-development/wav-blocks-studio':
+          return (
+            <ContentLoaderComponent viewerType="coming-soon" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
+          );
+        case '/audio-software-development/ultra-muse-player':
+          return (
+            <ContentLoaderComponent viewerType="coming-soon" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
+          );
+        case '/audio-software-development/umuse-audio-plugin':
           return (
             <ContentLoaderComponent viewerType="coming-soon" invisionURL="" style={styles} currentRoute={this.props.currentRoute}/>
           );
