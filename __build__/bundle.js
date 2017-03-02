@@ -98167,6 +98167,8 @@
 	  _createClass(DevCoverComponent, [{
 	    key: 'renderCover',
 	    value: function renderCover() {
+	      debugger;
+
 	      if (this.props.currentRoute == '/mobile-development') {
 	        _react2.default.createElement(
 	          'div',

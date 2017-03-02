@@ -10,8 +10,8 @@ export default class ContentContainerComponent extends React.Component {
   //console.log(currentRouteName);
   renderOnPath(path) {
     var aquaInvisionURL = 'https://projects.invisionapp.com/share/QV9OA25MA#/screens';
-    var vendooInvisionURL = 'http://kroleo.com/invision/Vendoo/#/screens';
-    var getHipInvisionURL = 'http://kroleo.com/invision/GetHip/#/screens';
+    var vendooInvisionURL = 'https://kroleo.com/invision/Vendoo/#/screens';
+    var getHipInvisionURL = 'https://kroleo.com/invision/GetHip/#/screens';
 
     switch(path){
         case '/personal':
