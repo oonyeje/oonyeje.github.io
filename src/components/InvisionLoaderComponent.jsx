@@ -72,7 +72,7 @@ export default class InvisionLoaderComponent extends React.Component {
     render () {
       return (
           <div className={this.props.style.content_container} >
-              <div className='project_selector_tBar_container' >
+              <div className={this.props.style.project_selector_tBar_container} >
 
               </div>
               <div className={this.props.style.content_component}>
@@ -88,7 +88,7 @@ export default class InvisionLoaderComponent extends React.Component {
                       width: '100%'
                     }} dangerouslySetInnerHTML={ this.iframe() } />
               </div>
-              <div className='project_type_selector_bBar_container' >
+              <div className={this.props.style.project_type_selector_bBar_container} >
                       {this.renderBarButtons()}
               </div>
           </div>

@@ -176,7 +176,7 @@ export default class ContentLoaderComponent extends React.Component {
                   {this.renderViewPort(this.props.viewerType)}
 
               </div>
-              <div className='project_type_selector_bBar_container' >
+              <div className={"this.props.style.project_type_selector_bBar_container"} >
                 <Col xs={6} xsOffset={3}>
                     {this.renderBarButtons()}
                 </Col>

@@ -7,6 +7,7 @@ var backgroundImageStyle = {
     backgroundImage: `url(${Background})`
 }
 
+
 export default class BackgroundComponent extends React.Component {
     //will be used to implement background photo
     render () {
